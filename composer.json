@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bezbeli\\PostViews\\": "src"
+            "Bezbeli\\Stats\\": "src"
         }
     },
     "require": {}
