@@ -26,7 +26,7 @@ class PostViews
         $visited = get_transient($key); //get transient and store in variable
 
         if ( false === ( $visited ) ) {
-            set_transient( $key, $value, 60*60*12 );
+            set_transient( $key, $value, 60*2 );
             $count_key = 'post_views_count';
             $count = get_post_meta($postID, $count_key, true);
             if ($count=='') {
