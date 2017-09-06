@@ -14,5 +14,6 @@
             "Bezbeli\\Stats\\": "src"
         }
     },
+    "minimum-stability": "stable",
     "require": {}
 }
