@@ -1,4 +1,5 @@
 <?php
+
 namespace Bezbeli\Stats;
 
 class PostViews
