@@ -1,5 +1,5 @@
 <?php
-namespace Bezbeli\PostViews;
+namespace Bezbeli;
 
 class PostViews
 {
