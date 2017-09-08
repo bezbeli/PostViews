@@ -5,21 +5,19 @@ namespace Bezbeli\Stats;
 class PostViews
 {
 
-    // function to display number of posts.
-    public function get($postID)
+    public function getViews($postID, $icon)
     {
         $count_key = 'post_views_count';
         $count = get_post_meta($postID, $count_key, true);
         if ($count=='') {
             delete_post_meta($postID, $count_key);
             add_post_meta($postID, $count_key, '0');
-            return "0 View";
+            return $icon . ' 0';
         }
-        return $count.' Views';
+        return $icon . ' ' . $count;
     }
 
-    // function to count views.
-    public function set($postID)
+    public function setViews($postID)
     {
         $user_ip = $_SERVER['REMOTE_ADDR'];
         $key = $user_ip . 'x' . $postID;
@@ -41,3 +39,4 @@ class PostViews
         }
     }
 }
+
