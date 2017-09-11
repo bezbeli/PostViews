@@ -17,7 +17,7 @@ class PostViews
         return $icon . ' ' . $count;
     }
 
-    public function setViews($postID)
+    public function setViews($postID, $interval = 600)
     {
         $user_ip = $_SERVER['REMOTE_ADDR'];
         $key = $user_ip . 'x' . $postID;
@@ -25,7 +25,7 @@ class PostViews
         $visited = get_transient($key);
 
         if (false === ( $visited )) {
-            set_transient($key, $value, 60*2);
+            set_transient($key, $value, $interval);
             $count_key = 'post_views_count';
             $count = get_post_meta($postID, $count_key, true);
             if ($count=='') {
